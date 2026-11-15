@@ -71,6 +71,7 @@ public final class SoundPack {
             "  eyes.ogg         brillan los ojos                        (4.8 s)",
             "  light_grow.ogg   la luz crece dentro de la boca          (5.0 s)",
             "  snap.ogg         cierra la boca de golpe                 (6.65 s)",
+            "  wail.ogg         lamento / grito de alma al cerrar la boca (6.7 s)",
             "  smoke.ogg        humo por la boca                        (6.8 s)",
             "  vanish.ogg       la mascara desaparece                   (8.45 s)",
             "Los .ogg deben ser OGG Vorbis (no mp3, no wav). Para silenciar uno, reemplazalo por un .ogg en silencio.",

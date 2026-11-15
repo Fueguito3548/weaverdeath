@@ -20,6 +20,7 @@ public final class ModSounds {
     public static final RegistryObject<SoundEvent> EYES = reg("eyes");
     public static final RegistryObject<SoundEvent> LIGHT_GROW = reg("light_grow");
     public static final RegistryObject<SoundEvent> SNAP = reg("snap");
+    public static final RegistryObject<SoundEvent> WAIL = reg("wail");
     public static final RegistryObject<SoundEvent> SMOKE = reg("smoke");
     public static final RegistryObject<SoundEvent> VANISH = reg("vanish");
 

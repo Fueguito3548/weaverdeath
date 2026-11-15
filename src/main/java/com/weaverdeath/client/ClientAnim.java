@@ -49,6 +49,7 @@ public final class ClientAnim {
         s(4.8, ModSounds.EYES);
         s(5.0, ModSounds.LIGHT_GROW);
         s(6.65, ModSounds.SNAP);
+        s(6.7, ModSounds.WAIL);
         s(6.8, ModSounds.SMOKE);
         s(8.45, ModSounds.VANISH);
         s(8.65, ModSounds.DARK_BURST);
@@ -160,14 +161,20 @@ public final class ClientAnim {
         int a = (int) (alpha * 255.0F);
         if (a > 8) {
             Font font = mc.font;
-            float s1 = Config.TEXT_SCALE.get().floatValue();
-            float s2 = Config.NAME_SCALE.get().floatValue();
-            float cx = screenW / 2.0F;
-            float y1 = bottom + Config.TEXT_GAP.get();
-            float y2 = y1 + 9.0F * s1 + 3.0F;
-
-            Component line1 = Component.literal(Config.LINE1.get());
+            Component line1 = Component.literal(Config.LINE1.get()).withStyle(ChatFormatting.BOLD);
             Component line2 = Component.literal(current).withStyle(ChatFormatting.BOLD);
+
+            // La primera linea nunca es mas ancha que un % del tamano de la mascara (los cuernos)
+            float w1 = Math.max(1, font.width(line1));
+            float maxW = size * Config.TEXT_WIDTH_PERCENT.get().floatValue() / 100.0F;
+            float s1 = Math.min(Config.TEXT_SCALE.get().floatValue(), maxW / w1);
+            // El nombre es un poco mas grande que la linea 1, pero nunca mas ancho que ella
+            float w2 = Math.max(1, font.width(line2));
+            float s2 = Math.min(s1 * Config.NAME_RATIO.get().floatValue(), (w1 * s1) / w2);
+
+            float cx = screenW / 2.0F;
+            float y1 = bottom + size * Config.TEXT_GAP_PERCENT.get().floatValue() / 100.0F;
+            float y2 = y1 + 9.0F * s1 + 1.0F * s1;
 
             drawCentered(g, font, line1, cx, y1, s1, (a << 24) | 0xFFFFFF);
             drawCentered(g, font, line2, cx, y2, s2, (a << 24) | RED);

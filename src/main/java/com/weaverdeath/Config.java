@@ -14,9 +14,10 @@ public final class Config {
     public static final ForgeConfigSpec.DoubleValue VOLUME;
     public static final ForgeConfigSpec.DoubleValue SIZE_PERCENT;
     public static final ForgeConfigSpec.DoubleValue TOP_PERCENT;
-    public static final ForgeConfigSpec.IntValue TEXT_GAP;
+    public static final ForgeConfigSpec.DoubleValue TEXT_GAP_PERCENT;
     public static final ForgeConfigSpec.DoubleValue TEXT_SCALE;
-    public static final ForgeConfigSpec.DoubleValue NAME_SCALE;
+    public static final ForgeConfigSpec.DoubleValue TEXT_WIDTH_PERCENT;
+    public static final ForgeConfigSpec.DoubleValue NAME_RATIO;
     public static final ForgeConfigSpec.ConfigValue<String> LINE1;
 
     static {
@@ -37,7 +38,7 @@ public final class Config {
 
         b.push("imagen");
         SIZE_PERCENT = b.comment("Alto de la animacion como porcentaje del alto de la pantalla.")
-                .defineInRange("tamano_porcentaje", 45.0, 5.0, 100.0);
+                .defineInRange("tamano_animacion_porcentaje", 60.0, 5.0, 100.0);
         TOP_PERCENT = b.comment("Distancia desde arriba, como porcentaje del alto de la pantalla.")
                 .defineInRange("arriba_porcentaje", 3.0, -20.0, 90.0);
         b.pop();
@@ -45,12 +46,14 @@ public final class Config {
         b.push("texto");
         LINE1 = b.comment("Primera linea de texto (blanca). El nombre del jugador va debajo, en rojo.")
                 .define("linea1", "Mongrel ha consumido la conciencia de");
-        TEXT_GAP = b.comment("Separacion entre la imagen y el texto, en pixeles. Negativo = mas pegado/encima de la mascara.")
-                .defineInRange("separacion_pixeles", -8, -300, 300);
-        TEXT_SCALE = b.comment("Tamano de la primera linea.")
-                .defineInRange("tamano_linea1", 1.2, 0.5, 5.0);
-        NAME_SCALE = b.comment("Tamano del nombre del jugador.")
-                .defineInRange("tamano_nombre", 2.0, 0.5, 6.0);
+        TEXT_GAP_PERCENT = b.comment("Separacion entre la imagen y el texto, como % del tamano de la animacion. Negativo = mas pegado a la mascara.")
+                .defineInRange("separacion_texto_porcentaje", -8.0, -50.0, 50.0);
+        TEXT_WIDTH_PERCENT = b.comment("Ancho maximo de la primera linea, como % del tamano de la animacion (60 = hasta los cuernos).")
+                .defineInRange("ancho_maximo_texto_porcentaje", 60.0, 10.0, 150.0);
+        TEXT_SCALE = b.comment("Tamano maximo de la primera linea (si es mas ancha que el limite, se achica sola).")
+                .defineInRange("tamano_maximo_linea1", 1.5, 0.3, 5.0);
+        NAME_RATIO = b.comment("Cuantas veces mas grande que la primera linea es el nombre (nunca pasa de su ancho).")
+                .defineInRange("proporcion_nombre", 1.45, 1.0, 3.0);
         b.pop();
 
         CLIENT_SPEC = b.build();

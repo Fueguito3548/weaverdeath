@@ -9,6 +9,7 @@
   "eyes":        { "sounds": [ "weaverdeath:eyes" ] },
   "light_grow":  { "sounds": [ "weaverdeath:light_grow" ] },
   "snap":        { "sounds": [ "weaverdeath:snap" ] },
+  "wail":        { "sounds": [ "weaverdeath:wail" ] },
   "smoke":       { "sounds": [ "weaverdeath:smoke" ] },
   "vanish":      { "sounds": [ "weaverdeath:vanish" ] }
 }
