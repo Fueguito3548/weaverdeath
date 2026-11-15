@@ -1,0 +1,14 @@
+{
+  "rise":        { "sounds": [ "weaverdeath:rise" ] },
+  "orb_appear":  { "sounds": [ "weaverdeath:orb_appear" ] },
+  "dark_burst":  { "sounds": [ "weaverdeath:dark_burst" ] },
+  "mask_appear": { "sounds": [ "weaverdeath:mask_appear" ] },
+  "mouth_open":  { "sounds": [ "weaverdeath:mouth_open" ] },
+  "tremble":     { "sounds": [ "weaverdeath:tremble" ] },
+  "orb_enter":   { "sounds": [ "weaverdeath:orb_enter" ] },
+  "eyes":        { "sounds": [ "weaverdeath:eyes" ] },
+  "light_grow":  { "sounds": [ "weaverdeath:light_grow" ] },
+  "snap":        { "sounds": [ "weaverdeath:snap" ] },
+  "smoke":       { "sounds": [ "weaverdeath:smoke" ] },
+  "vanish":      { "sounds": [ "weaverdeath:vanish" ] }
+}

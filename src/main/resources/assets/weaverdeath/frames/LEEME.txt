@@ -1,0 +1,4 @@
+AQUI VAN LOS FOTOGRAMAS DE LA ANIMACION (los PNG que genera Blender: weaver_0000.png, weaver_0001.png, ...).
+
+Pon aqui los 201 PNG antes de compilar y quedaran DENTRO del mod (un solo archivo .jar para todos los jugadores).
+No cambies sus nombres: el mod los ordena por nombre.
