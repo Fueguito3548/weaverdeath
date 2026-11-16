@@ -47,9 +47,9 @@ public final class Config {
         LINE1 = b.comment("Primera linea de texto (blanca). El nombre del jugador va debajo, en rojo.")
                 .define("linea1", "Mongrel ha consumido la conciencia de");
         TEXT_GAP_PERCENT = b.comment("Separacion entre la imagen y el texto, como % del tamano de la animacion. Negativo = mas pegado a la mascara.")
-                .defineInRange("separacion_texto_porcentaje", -8.0, -50.0, 50.0);
-        TEXT_WIDTH_PERCENT = b.comment("Ancho maximo de la primera linea, como % del tamano de la animacion (60 = hasta los cuernos).")
-                .defineInRange("ancho_maximo_texto_porcentaje", 60.0, 10.0, 150.0);
+                .defineInRange("separacion_texto_pct", -2.0, -50.0, 50.0);
+        TEXT_WIDTH_PERCENT = b.comment("Ancho maximo de la primera linea, como % del tamano de la animacion (67 = un poco mas que los cuernos).")
+                .defineInRange("ancho_maximo_texto_pct", 67.0, 10.0, 150.0);
         TEXT_SCALE = b.comment("Tamano maximo de la primera linea (si es mas ancha que el limite, se achica sola).")
                 .defineInRange("tamano_maximo_linea1", 1.5, 0.3, 5.0);
         NAME_RATIO = b.comment("Cuantas veces mas grande que la primera linea es el nombre (nunca pasa de su ancho).")
